@@ -1,0 +1,124 @@
+Terraform: 
+
+Link to notes:
+
+https://directdevops.blog/devops-classroom-notes/
+
+CI/CD - Pipeline 
+
+
+Components of pipeline 
+
+
+
+
+
+Procedural vs Declarative 
+
+
+
+
+
+Using Terraform we would use declarative approach to specify what are our infrastructure needs => Infrastructure as Code (IaC)
+
+
+
+
+Terraform is Cloud-agnostic because deploy to any cloud or virtual infra provider
+
+
+
+Install terraform :
+
+First install homebrew for mac and chocolaty for windows
+
+Mac => brew => brew install terraform
+
+Windows => choco => choco install terraform -y
+
+
+Terraform Terminologies
+
+	• Provider: This specifies terraform where to create infrastructure
+	• Resource: Resources are the core elements of your infrastructure.
+		○ The inputs which we specify about the resource are called as arguments
+		○ When we create resources using terraform they specify some outputs of the resource which are called as attributes
+	• DataSource: This helps us in querying information (about resources) from terraform configuration.
+	
+Writing a Terraform Configuration file
+
+	• We need to specify the provider
+		• Syntax:
+		
+		provider "<name-of-provider>" {
+    arg1 = "value1"
+    ...
+    ..
+    argn = "value2"
+}
+	
+	• We need to find a right resource from the provider
+	
+		resource "<resource-type>" "<resource-name>" {
+    arg1 = "value1"
+      ...
+      ..
+      argn = "value2"
+		}
+	• Hello World Configuration
+	
+	provider "aws" {
+    region = "us-west-2"
+}
+	resource "aws_s3_bucket" "my_bucket" {
+    bucket = "my-tf-qt-s3-bucket"
+    acl = "private"
+}
+Activity: From Terraform Create an S3 bucket in AWS Cloud
+
+	• Manual Steps:
+		• Login into AWS Console
+		• Follow the steps 
+		
+		
+		 
+		
+		 
+		
+		 
+		
+		 
+		
+	
+	• Approach in Terraform
+		• Find the Provider: 
+		
+		
+		 
+		
+		
+		• How to configure authentication 
+		
+		
+		
+		• Find a resource in AWS Provider to Create S3 bucket 
+		
+		
+		 
+		
+
+
+
+Find the users information: 
+
+#whoamI
+#id
+
+Sudo  File:
+
+/etc/sudoers
+
+To download file
+
+Curl <http link> -o
+Wget <http link> -o filename.txt
